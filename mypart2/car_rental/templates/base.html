@@ -1,0 +1,62 @@
+<html>
+<head>
+    <title>CAR_RENTAL CO</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.0.min.js"
+            integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+    <style>
+        label, input {
+            display: block;
+        }
+
+        .row {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+        }
+
+        input[type='submit'], button {
+            font-size: 24px;
+            text-align: center;
+            padding: 12px;
+            border-radius: 8px;
+        }
+
+        .page-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="wrapper">
+
+    <div class="col-8">
+        <div class="page-header">
+            <span><h1 style="text-align: center; display: inline-block"><a href="/">Car Home</a></h1></span>
+            <span style="margin-left: 40px;">
+        {% if user.is_authenticated %}
+            {{ user.username }} <a href="/accounts/logout/"> Log Out</a>
+        {% else %}
+            <a href="/accounts/login/">Log in</a>
+        {% endif %}
+        </span>
+        </div>
+    </div>
+
+    <div class="content container">
+        <div class="row">
+            <div class="col-md-8">
+                {% block content %}
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

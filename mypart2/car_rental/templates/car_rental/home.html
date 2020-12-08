@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="info">
+        <p>Welcome to CAR </p>
+
+        <p></p>
+    </div>
+
+    {% load static %}
+
+    <img src="{% static "img/banner.jpg" %}" alt="My image" width="100%" style="margin: 5px 0 40px;">
+
+    <div class="row button-form">
+        <a href='accounts/register'>
+            <button class="btn-submit">Sign Up</button>
+        </a>
+    </div>
+
+    {% csrf_token %}
+    {{ form.as_p }}
+
+
+    <style>
+        .info {
+            text-align: center;
+            padding: 20px;
+            font-family: "Roboto", "Lucida Grande", "DejaVu Sans", "Bitstream Vera Sans", Verdana, Arial, sans-serif;
+            font-weight: bold;
+            font-size: 24px;
+        }
+    </style>
+
+    <script>
+        $.ajax('drivers/?page=1', {
+            success: (data) => {
+                console.log(data)
+            }
+        })
+    </script>
+{% endblock %}
