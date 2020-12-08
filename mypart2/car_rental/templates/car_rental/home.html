@@ -1,14 +1,25 @@
 {% extends 'base.html' %}
 {% block content %}
-    <div class="info">
-        <p>Welcome to CAR </p>
 
+    {% load static %}
+    <img src="{% static 'img/wowpic.jpg' %}" alt="My image" width="100%" style="margin: 5px 0 40px;">
+
+    <div class="info">
+        <p>Welcome to World On Wheels (WOW)!</p>
+        <p>You Need A Car?</p>
+        <p>Big Or Small We Have Them All!</p>
         <p></p>
     </div>
 
-    {% load static %}
+    <!-- 添加-->
+    <div class="mark">
+        <p>BIG OR SMALL WE HAVE ALL!</p>
+        <p></p>
+    </div>
 
-    <img src="{% static "img/banner.jpg" %}" alt="My image" width="100%" style="margin: 5px 0 40px;">
+    <!-- {% load static %} -->
+
+    <!-- <img src="{% static "img/banner.jpg" %}" alt="My image" width="100%" style="margin: 5px 0 40px;"> -->
 
     <div class="row button-form">
         <a href='accounts/register'>
@@ -27,6 +38,16 @@
             font-family: "Roboto", "Lucida Grande", "DejaVu Sans", "Bitstream Vera Sans", Verdana, Arial, sans-serif;
             font-weight: bold;
             font-size: 24px;
+        }
+    </style>
+
+    <style>
+        .mark {
+            text-align: center;
+            /* padding: 20px; */
+            font-family: "Roboto", "Lucida Grande", "DejaVu Sans", "Bitstream Vera Sans", Verdana, Arial, sans-serif;
+            font-weight: bold;
+            font-size: 16px;
         }
     </style>
 
